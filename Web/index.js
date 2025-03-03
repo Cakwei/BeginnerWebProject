@@ -1,10 +1,9 @@
 function burgerOpen() {
     document.getElementById("menu").style.width = "250px";
-    document.getElementById("menu").style.height = "100vh";
-
+    document.getElementById("hamburger-menu").style.display = "none";
   }
   
   function burgerClose() {
-    document.getElementById("menu").style.width = "0";
-    document.getElementById("menu").style.height = "0";
+    document.getElementById("menu").style.width = "0px";
+    document.getElementById("hamburger-menu").style.display = "";
   }
