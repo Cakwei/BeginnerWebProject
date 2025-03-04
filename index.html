@@ -1,0 +1,140 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cakwei's Achievements</title>
+    <script src="index.js"></script> 
+    <script src="https://kit.fontawesome.com/13bba4ffac.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .dark-mode {
+            background-color: white;
+            color: black;
+        }
+        body {
+            background-color: black;
+            overflow: hidden;
+        }    
+        #hamburger-menu {    
+            display: block;
+            color: white;
+            cursor: pointer;
+        }
+        #top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+        }
+        #right-nav-icon {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+        }
+        #moon-icon {
+            cursor: pointer;
+            color: white;
+
+        }
+        #menu {
+            position: fixed;
+            width: 0;
+            height: 100%;
+            top: 0;
+            color: white;
+            background-color: rgb(32, 31, 31);
+            overflow: hidden;
+            transition: width 0.55s;
+        }
+        #menu div {
+            margin: 10px;
+            display: grid
+        }
+        #menu-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        #menu a {
+            margin: 0 0 10px 0;
+        }
+        #learn-more-btn, #account-btn {
+            background-color: transparent;
+            border-radius: 25px;
+            border: 1px solid white;
+            color: white;
+            font-weight: bold;
+            padding: 7px 15px;
+            cursor: pointer;
+        }
+        article {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+        }
+        #learn-more-btn {
+            grid-column: 3 / 4;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <header id="top">
+            <svg
+            id="hamburger-menu"
+            onclick="burgerOpen()"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M4 4H8V8H4V4Z" fill="currentColor" />
+            <path d="M4 10H8V14H4V10Z" fill="currentColor" />
+            <path d="M8 16H4V20H8V16Z" fill="currentColor" />
+            <path d="M10 4H14V8H10V4Z" fill="currentColor" />
+            <path d="M14 10H10V14H14V10Z" fill="currentColor" />
+            <path d="M10 16H14V20H10V16Z" fill="currentColor" />
+            <path d="M20 4H16V8H20V4Z" fill="currentColor" />
+            <path d="M16 10H20V14H16V10Z" fill="currentColor" />
+            <path d="M20 16H16V20H20V16Z" fill="currentColor" />
+          </svg>
+            <div id="right-nav-icon">
+                <svg onclick="toggleMode()" xmlns="http://www.w3.org/2000/svg" color="white" width="25" height="25" fill="currentColor" class="bi bi-moon" viewBox="0 0 16 16">
+                    <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/>
+                  </svg>
+                <button onclick="window.location.href = 'login.html'" id="account-btn">Login/Register</button>
+            </div>
+        </header>
+        <div id="menu">                                 
+            <div>
+                <a>1</a>
+                <a>2</a>
+                <a>3</a>
+                <svg onclick="burgerClose()"
+                    id="menu-close-btn"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    >
+                    <path
+                        d="M6.2253 4.81108C5.83477 4.42056 5.20161 4.42056 4.81108 4.81108C4.42056 5.20161 4.42056 5.83477 4.81108 6.2253L10.5858 12L4.81114 17.7747C4.42062 18.1652 4.42062 18.7984 4.81114 19.1889C5.20167 19.5794 5.83483 19.5794 6.22535 19.1889L12 13.4142L17.7747 19.1889C18.1652 19.5794 18.7984 19.5794 19.1889 19.1889C19.5794 18.7984 19.5794 18.1652 19.1889 17.7747L13.4142 12L19.189 6.2253C19.5795 5.83477 19.5795 5.20161 19.189 4.81108C18.7985 4.42056 18.1653 4.42056 17.7748 4.81108L12 10.5858L6.2253 4.81108Z"
+                        fill="currentColor"
+                    />
+                </svg>
+            </div>
+        </div>
+        <article id="article">
+            <button id="learn-more-btn">Learn more</button>
+
+        </article>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>
