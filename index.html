@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <title>Cakwei's Achievements</title>
     <script src="index.js"></script> 
     <script src="https://kit.fontawesome.com/13bba4ffac.js" crossorigin="anonymous"></script>
@@ -15,13 +15,14 @@
        
         body {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            height: 100%;
+            grid-template-columns: 1fr;
             grid-template-rows: 50px 1fr 75px;
-            width: 100vw;
-            height: 100vh;
+            min-width: 250px;
+            overflow: scroll;
         }
         #top {
-            grid-column: 1 / 4;
+            grid-column: 1 / 2;
             grid-row: 1 / 2;
             display: flex;
             justify-content: space-between;
@@ -32,6 +33,7 @@
             cursor: pointer;
             margin: 0 0 0 15px;
             color: white;
+            min-width: 30px;
         }
         #hamburger-menu:hover, #moon-icon:hover {
             transform: scale(1.25);
@@ -76,21 +78,14 @@
         }
         #article {
             position: relative;
-            grid-column: 1 / 4;
+            grid-column: 1 / 2;
             grid-row: 2 / 3;
             display: grid;
-            grid-template-columns: repeat(auto-fill, 1fr);
-            grid-template-rows: 300px 125px 1fr 1fr 75px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 300px auto 1fr 300px;
+            min-width: 250px;
         }
-        #description {
-            grid-column: 1 / 3;
-            grid-row: 2 / 3;
-            margin: 25px;
-            overflow-wrap: break-word;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+     
         #menu {
             position: absolute;
             background-color: #4CAF50;
@@ -105,12 +100,22 @@
             position: relative;
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
+      
         #menu div a, #menu div a:link, #menu div a:visited {
             text-decoration: none;
-            margin: 25px;
+            width: 100%;
+            height: 100%;
+            padding: 25px;
             text-align: center;
             color: white;
+        } 
+        #menu div a:first-child {
+            margin-top: 50px;
+        }
+        #menu div a:hover {
+            backdrop-filter: brightness(60%);
         }
         #close-menu-btn {
             position: absolute;
@@ -120,10 +125,9 @@
             cursor: pointer;
         }
         #main-title-container {
-            grid-column: 1 / 3;
+            grid-column: 1 / 4;
             grid-row: 1 / 2;
             text-align: center;
-            margin-top: 25px;
             background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('assets/img1.jpg');
             background-position: center;
             background-size: cover;
@@ -137,14 +141,24 @@
             font-weight: bold;
             font-size: 1.25rem;
             color: white;
+        }  
+        #description {
+            grid-column: 1 / 4;
+            grid-row: 2 / 3;
+            margin: 25px;
+            overflow-wrap: break-word;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         #selection-container {
             grid-column: 1 / 4;
             grid-row: 3 / 4;
-            display: flex;  
-            flex: 1 0 40%;
+            display: flex;
             flex-wrap: wrap;
             row-gap: 25px;
+            width: min(80%, 725px);
+            justify-self: center;
             justify-content: center;
         }
         [class^=container-] {
@@ -156,8 +170,8 @@
             justify-content: space-between;
             color: white;
             margin: 0 20px;
-            width: 225px;
             height: 250px;
+            flex: 1 0 35%;
         }
         [class^=container-]:hover {
             transform: scale(1.02);
@@ -175,25 +189,26 @@
         }
         [class^=container-] a:hover {
             background-color: #026bdb;   
-        }
-        .container-1 {
-            grid-column: 1 / 2;
-            grid-row: 1 / 2;
-        }
-        .container-2 {
-            grid-column: 2 / 3;
-            grid-row: 1 / 2;
-        }
-        .container-3 {
-            grid-column: 1 / 2;
-            grid-row: 2 / 3;
-        }
-        .container-4 {
-            grid-column: 2 / 3;
-            grid-row: 2 / 3;
-        }    
-        #footer {
+        }  
+        #profile {
             grid-column: 1 / 4;
+            grid-row: 4 / 5;
+            display: flex;
+            flex-direction: column;
+            margin: 25px 0;
+            justify-content: center;
+            align-items: center;   
+            background: peachpuff;
+        }
+        #profile p {
+            font-size: 2.5rem;
+            font-weight: bolder;
+        }
+        #profile-img {
+            width: 150px;
+        }
+        #footer {
+            grid-column: 1 / 2;
             grid-row: 3 / 4;
             background-color: #4CAF50;
             color: white;
@@ -209,33 +224,11 @@
                 background-color: black;
             }
         }
-        #profile {
-            grid-column: 1 / 3;
-            grid-row: 4 / 5;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 50px;
-            margin: 25px 0 0 0;
-            background-color: #e9e9e9;
-            position: relative;
-        }
-        #profile p {
-            font-size: 2.5rem;
-            font-weight: bolder;
-            margin: 25px 0 25px 0;
-        }
-        #profile-img {
-            position: absolute;
-            width: 150px;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            mix-blend-mode: multiply;
-        }
+       
         #chatbot {
             position: sticky;
-            left: 95vw;
-            bottom: 6.5vh;
+            left: 0;
+            bottom: 0;
             border-radius: 50%;
             height: 50px;
             width: 50px;
@@ -370,7 +363,9 @@
         </div>  
         <div id="profile">
             <p>Made by:</p>
-            <div class="profile"><a href="https://github.com/cakwei"><img id="profile-img" src="assets/ff.png"></a></div>
+            <a href="https://github.com/cakwei">
+                <img id="profile-img" src="assets/ff.png">
+            </a>
         </div> 
         <div id="chatbot" onclick="alert('Chatbot soon');">qwdqw</div>
     </main>
