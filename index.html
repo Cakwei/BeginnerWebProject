@@ -1,23 +1,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <title>Cakwei's Achievements</title>
     <script src="index.js"></script> 
     <script src="https://kit.fontawesome.com/13bba4ffac.js" crossorigin="anonymous"></script>
-    <style> 
+    <style>
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
         }
-        body {
-           overflow: scroll;
+        #body {
+            display: grid;
+            grid-template-columns: 100vw;
+            grid-template-rows: 50px 1fr 50px;
+            background-color: aquamarine;
+            min-width: 250px;
+        }
+        #top {
+            grid-column: 1 / 4;
+            grid-row: 1 / 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            white-space-collapse:collapse;
+        }
+        #hamburger-menu {
+            min-width: 25px;
+            color: white;
+        }
+        #right-nav-icon {
+            display: flex;
+            align-items: center;
+        }
+        #moon-icon {
+            min-width: 25px;
+        }
+        #account-btn-mobile {
+            border: none;
+            background-color: transparent;
+            color: white;
+            min-width: 25px;
+        } 
+        #account-btn-desktop {
+            display: none;
+        }   
+        #article {
+            grid-column: 1 / 4;
+            grid-row: 2 / 3;
+            min-width: 250px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(auto-fill, 1fr);
+        }
+        #main-title-container {
+            grid-column: 1 / 4;
+            grid-row: 1 / 2;
+        }
+        #description {
+            grid-column: 1 / 4;
+            grid-row: 2 / 3;
+        }
+        #profile-img {
+            width: 25px;    
         }
         
-        #profile-img {
-            width: 25px;
+        #footer {
+            grid-column: 1 / 4;
+            grid-row: 3 / 4;
         }
     </style>
     
