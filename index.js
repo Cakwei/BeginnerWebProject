@@ -8,3 +8,4 @@ function burgerOpen() {
   function toggleMode() {
     document.body.classList.toggle("dark-mode");
   }
+  

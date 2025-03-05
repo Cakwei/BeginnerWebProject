@@ -12,12 +12,14 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+       
         body {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: 50px 1fr 75px;
             width: 100vw;
             height: 100vh;
+            background-color: #aae0ab;
         }
         #top {
             grid-column: 1 / 4;
@@ -25,7 +27,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #4CAF50;
+            background-color: #3b993e;
         }
         #hamburger-menu {
             cursor: pointer;
@@ -78,12 +80,9 @@
             gap: 5px;
             padding: 0 20px;
         }
-        #footer {
-            grid-column: 1 / 4;
-            grid-row: 3 / 4;
-            color: white;
-            background-color: orange;
-            text-align: center;
+        #description {
+            grid-column: 1 / 3;
+            grid-row: 2 / 3;
         }
         #menu {
             position: absolute;
@@ -125,43 +124,64 @@
             font-size: 1.25rem;
         }
         [class^=container-] {
-            background-color: #FFC107;
+            background-color: #4CAF50;
             border-radius: 5px;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 10px;
+            color: white;
+            margin: 5px;
         }
-        [class^=container-] a {
+        [class^=container-] a, [class^=container-] a:link, [class^=container-] a:visited {
+            text-decoration: none;
             background-color: #007AFF;
-            border-radius: 20px;
+            border-radius: 0 0 5px 5px;
+            width: 100%;
             padding: 10px 25px;
             align-self: center;
             color: white;
+            font-weight: bold;
         }
         [class^=container-] a:hover {
             background-color: #026bdb;
         }
         .container-1 {
             grid-column: 1 / 2;
-            grid-row: 2 / 3;
+            grid-row: 3 / 4;
         }
         .container-2 {
             grid-column: 2 / 3;
-            grid-row: 2 / 3;
+            grid-row: 3 / 4;
         }
         .container-3 {
             grid-column: 1 / 2;
-            grid-row: 3 / 4;
+            grid-row: 4 / 5;
         }
         .container-4 {
             grid-column: 2 / 3;
+            grid-row: 4 / 5;
+        }    
+        #footer {
+            grid-column: 1 / 4;
             grid-row: 3 / 4;
+            background-color: #3b993e;
+            color: white;
+            text-align: center; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } 
+        .dark-mode {
+            background-color: black;
+            color: white;
+            #top, #footer {
+                background-color: black;
+            }
         }
     </style>
 </head>
-<body>
+<body id="body">
     <header id="top">
         <svg
         id="hamburger-menu"
@@ -214,6 +234,18 @@
             <h1>E-Waste</h1>
             <h5>Recycle E-Waste, Protect the Future</h5>
         </div>
+        <div id="description">
+            Key Features Section
+
+            🟢 Icons + Short descriptions for:
+            
+                Easy E-Waste Pickup 📦
+                Nearby Recycling Centers 📍
+                Rewards for Responsible Disposal 🎖️
+                Certified Recycling Partners 🔄
+            
+            
+        </div>
         <div class="container-1">
             1
             <a href="youtube.com">View page</a>
@@ -231,9 +263,11 @@
         </div>
     </main>
     <footer id="footer">
-        Thanks for viewing my GitHub website!
-        <br>
-        Diploma - Asia Pacific University (APU)
+        <div>
+            <p>Thanks for viewing my GitHub website!</p>
+            <p>Diploma - Asia Pacific University (APU)  </p>
+        </div>
     </footer>
+  
 </body>
 </html>
